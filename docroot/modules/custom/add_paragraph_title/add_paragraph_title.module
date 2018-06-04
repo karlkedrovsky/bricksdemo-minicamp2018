@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains add_paragraph_title.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function add_paragraph_title_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.add_paragraph_title':
+      $output = '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Adds labels/titles to paragraphs.') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Prepares variables for theme_inline_entity_form_entity_table().
+ */
+function add_paragraph_title_preprocess_inline_entity_form_entity_table(&$variables) {
+  $index = 0;
+  while (isset($variables['form'][$index]['#entity'])) {
+    if ($variables['form'][$index]['#entity']->hasField('field_paragraph_title') && !$variables['form'][$index]['#entity']->get('field_paragraph_title')->isEmpty()) {
+      $variables['form'][$index]['#label'] = $variables['form'][$index]['#entity']->get('field_paragraph_title')->getString();
+    }
+    $index++;
+  }
+}

@@ -1,0 +1,9 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/foundation.min.css: {}
+      css/style.css: {}
+  js:
+    js/foundation.min.js: {}
+    js/script.js: {}

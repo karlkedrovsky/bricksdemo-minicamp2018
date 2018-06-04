@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the  module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function most_para_label_install() {
+  module_set_weight('bricks_inline', -2);
+  module_set_weight('most_para_label', -1);
+}
