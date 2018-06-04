@@ -8,8 +8,16 @@ If you're using Docksal just run the following commands starting in the root dir
 
 ```
 fin start
+cd docroot
 fin exec composer install
+fin exec "drush sqlc <../backup/db.sql"
+cd sites/default
+unzip ../../../backup/file.zip
+chmod -R a+w files
+fin drush cr all
 ```
+
+Note: The sites/default/services.local.yml and sites/default/settings.local.php files are checked into git so the above should work out of the box. If you're not using docksal or have different database connection information just modify the sites/default/settings.local.php file.
 
 ## Database and Files Content
 
