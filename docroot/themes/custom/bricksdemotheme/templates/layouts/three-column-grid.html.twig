@@ -1,0 +1,11 @@
+{% if content %}
+
+  <div {{ attributes.addClass('grid-x').addClass('grid-padding-x') }}>
+    {% for region in content['#layout'].regions|keys if content[region] %}
+      <div class="small-4 cell">
+        {{ content[region] }}
+      </div>
+    {% endfor %}
+  </div>
+
+{% endif %}
