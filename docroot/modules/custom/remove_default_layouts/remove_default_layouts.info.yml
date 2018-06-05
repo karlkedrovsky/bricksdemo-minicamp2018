@@ -1,7 +1,0 @@
-name: 'Remove Default Layouts'
-description: 'Remove the default layouts that come with Layout Discover module in core.'
-package: Minicamp
-type: module
-core: 8.x
-dependencies:
-  - layout_discovery

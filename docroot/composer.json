@@ -12,7 +12,8 @@
         "drupal/admin_toolbar": "^1.23",
         "drupal/paragraphs": "^1.2",
         "drupal/examples": "1.x-dev",
-        "drupal/console": "~1.0"
+        "drupal/console": "~1.0",
+        "drupal/layout_discovery_override": "^1.0"
     },
     "replace": {
         "drupal/core": "^8.5"
